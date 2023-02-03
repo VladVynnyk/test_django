@@ -1,0 +1,37 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+    <h1>Products page</h1>
+    <div class="header">
+        <h2>Categories:</h2>
+        <ul>
+            {% for category in categories %}
+                <li>
+                    <a href="{% url 'filtered products' category %}" class="category">{{category}}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <!-- {% for product in products %}
+    <div class="product">
+        <h4>{{product.name}}</h4>
+    </div>
+    {%endfor%}
+ -->
+    <!-- {{products}} -->
+    <h2>Products:</h2>
+    {% for product in products %}
+    <div class="product">
+        {{product}}
+    </div>
+    {% endfor %}
+</body>
+</html>
+{% endblock content %}
